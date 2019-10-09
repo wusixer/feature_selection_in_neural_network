@@ -25,29 +25,6 @@ plt.savefig("plots/aa_all_drug_training_and_val_weighted_f1.png")
 plt.close(fig)
 
 
-# plot EA
-ea_train_val_value=pandas.read_csv("logs/4.ea.var_selection_validation.sorted.txt", delimiter='\t',header=0 )
-# turn interactive plotting off
-plt.ioff()
-# plot overall
-fig = plt.figure()
-plt.plot(ea_train_val_value[['top_n_var']], ea_train_val_value[['weighted_f1_train']], color='olive', linewidth=2, label="weighted f1 on training set")
-plt.plot(ea_train_val_value[['top_n_var']], ea_train_val_value[['weighted_f1_val']], color='red', linewidth=2, label="weighted f1 on validation set")
-plt.axvline(x=21, linestyle='dashed', markersize=2, color='black')
-#18      0.7224531173706055      0.646756112575531       0.7227810621261597      0.6573419570922852      0.7230604290962219      0.6969693899154663
-plt.ylim(0,1)
-plt.legend()
-
-# add axs
-plt.title("EA All Drugs Model Training and Validation F1 score")
-plt.xlabel("Features (sorted)")
-plt.ylabel("Weighted F1 Score")
-plt.savefig("plots/ea_all_drug_training_and_val_weighted_f1.png")
-plt.close(fig)
-
-
-
-
 
 
 
